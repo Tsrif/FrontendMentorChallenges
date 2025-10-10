@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import QRCode from "./components/QRCode.vue";
+// See vite.config.ts for details about automatic imports
+const route = useRoute()
 
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+useHead({
+  title: () => route.meta.title,
+  meta: [
+    {
+      property: 'og:title',
+      content: () => route.meta.title,
+    },
+  ],
+})
 </script>
-
 <template>
-  <div class="min-h-screen bg-slate-300">
-    <div class="flex h-screen items-center justify-center">
-      <QRCode class="max-w-[18rem]"></QRCode>
-    </div>
-  </div>
+  <router-view />
 </template>
-
-<style></style>
