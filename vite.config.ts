@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export default defineConfig({
+  base: '/FrontendMentorChallenges/',
   plugins: [
     vue(),
     AutoImport({
@@ -35,7 +36,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
+      '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
     },
   },
   css: {
