@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ComponentPicker: typeof import('./src/components/ComponentPicker.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     QRCode: typeof import('./src/components/QRCode.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

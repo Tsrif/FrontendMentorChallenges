@@ -1,10 +1,5 @@
 <template>
-  <div class="min-h-screen bg-slate-300">
-    <div class="flex h-screen items-center justify-center">
-      <QRCode class="max-w-[18rem]"></QRCode>
-    </div>
+  <div class="text-center space-y-3">
+    <h1 class="text-xl font-semibold text-slate-800">Pick a component from the dropdown above.</h1>
   </div>
 </template>
-<script setup lang="ts">
-import QRCode from '@/components/QRCode.vue'
-</script>
