@@ -11,7 +11,8 @@
     "test-e2e": "playwright test --headed",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --fix",
-    "ts": "vue-tsc --build --force"
+    "ts": "vue-tsc --build --force",
+    "deploy": "vite build && git add dist -f && git commit -m \"Deploy to GitHub Pages\" && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@unhead/vue": "^2.0.10",
