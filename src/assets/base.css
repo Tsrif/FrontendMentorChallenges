@@ -4,27 +4,14 @@
   prefixes: mdi;
 }
 
-/* Demo styles -- delete these to start from a clean slate */
-header {
-  @apply mx-auto px-4 pt-6 prose-sm md:px-6 md:prose -mb-8;
+@theme {
+  --font-outfit: 'Outfit', sans-serif;
 
-  p {
-    @apply text-xl leading-relaxed tracking-wide text-gray-700;
-  }
-}
+  --text-preset1: 22px;
+  --text-preset1--line-height: 1.2;
 
-main {
-  @apply p-4 mx-auto prose md:px-6 prose-indigo sm:rounded-md;
-}
+  --text-preset2: 15px;
+  --text-preset2--line-height: 1.4;
 
-footer {
-  @apply py-6 text-sm text-center text-gray-700;
-
-  a {
-    @apply underline;
-  }
-}
-
-button {
-  @apply px-3 py-2 bg-white border border-gray-300 rounded-md shadow flex items-center;
+  --tracking-tightest: 0.0125em;
 }
