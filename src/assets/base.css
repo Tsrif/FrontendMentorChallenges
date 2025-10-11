@@ -1,17 +1,27 @@
 @import 'tailwindcss';
+
+/* Plugins */
 @plugin "@tailwindcss/typography";
 @plugin "@egoist/tailwindcss-icons" {
   prefixes: mdi;
 }
 
+/* Custom Theme Tokens */
 @theme {
+  /* fonts */
   --font-outfit: 'Outfit', sans-serif;
 
+  /* font sizes */
   --text-preset1: 22px;
   --text-preset1--line-height: 1.2;
-
   --text-preset2: 15px;
   --text-preset2--line-height: 1.4;
 
+  /* letter spacing */
   --tracking-tightest: 0.0125em;
+
+  /* custom colors */
+  --color-slate-900: #1f314f;
+  --color-slate-500: #68778d;
+  --color-slate-300: #d5e1ef;
 }
