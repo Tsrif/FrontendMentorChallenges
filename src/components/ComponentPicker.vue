@@ -4,6 +4,7 @@
       <select
         id="component-picker"
         v-model="selectedPath"
+        aria-label="Select component"
         @change="go"
         class="block w-60 rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400"
       >
