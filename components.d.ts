@@ -9,7 +9,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ChallengePicker: typeof import('./src/components/ChallengePicker.vue')['default']
-    ComponentPicker: typeof import('./src/components/ChallengePicker.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Link: typeof import('./src/components/Link.vue')['default']
     QRCode: typeof import('./src/components/QRCode.vue')['default']
