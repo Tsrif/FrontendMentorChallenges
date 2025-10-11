@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-[18rem]">
-    <div class="min-h-screen flex items-center justify-center">
+    <div class="flex items-center justify-center">
       <article class="bg-white rounded-2xl shadow-sm w-full p-4 text-center space-y-4">
         <img :src="qrCode" alt="QR code" class="rounded-xl w-full" />
 

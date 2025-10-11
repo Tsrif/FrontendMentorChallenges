@@ -8,8 +8,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ComponentPicker: typeof import('./src/components/ComponentPicker.vue')['default']
+    ChallengePicker: typeof import('./src/components/ChallengePicker.vue')['default']
+    ComponentPicker: typeof import('./src/components/ChallengePicker.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Link: typeof import('./src/components/Link.vue')['default']
     QRCode: typeof import('./src/components/QRCode.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

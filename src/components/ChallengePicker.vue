@@ -2,9 +2,9 @@
   <div class="w-full border-slate-200/60">
     <div class="mx-auto max-w-5xl px-4 py-3 flex items-center gap-3">
       <select
-        id="component-picker"
+        id="challenge-picker"
         v-model="selectedPath"
-        aria-label="Select component"
+        aria-label="Select challenge"
         @change="go"
         class="block w-60 rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400"
       >
@@ -24,7 +24,7 @@ import { useRoute, useRouter } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 
-const options = [{ label: 'QR Component', path: '/qr-code' }]
+const options = [{ label: 'QR Component challenge', path: '/qr-code' }]
 
 const selectedPath = ref<string>('')
 
