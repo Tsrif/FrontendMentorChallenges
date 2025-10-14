@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import IndexPage from '@/pages/IndexPage.vue'
 import QRCodePage from '@/pages/QRPage.vue'
+import ContactFormPage from './pages/ContactFormPage.vue'
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: '/qr-code',
     component: QRCodePage,
     meta: { title: 'QR Code Component' },
+  },
+  {
+    path: '/contact-form',
+    component: ContactFormPage,
+    meta: { title: 'Contact form' },
   },
 ]
 

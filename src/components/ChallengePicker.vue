@@ -24,7 +24,10 @@ import { useRoute, useRouter } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 
-const options = [{ label: 'QR Component challenge', path: '/qr-code' }]
+const options = [
+  { label: 'QR Component challenge', path: '/qr-code' },
+  { label: 'Contact form challenge', path: '/contact-form' },
+]
 
 const selectedPath = ref<string>('')
 

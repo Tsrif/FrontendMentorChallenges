@@ -11,8 +11,12 @@ declare module 'vue' {
     ChallengePicker: typeof import('./src/components/ChallengePicker.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Link: typeof import('./src/components/Link.vue')['default']
+    Panel: typeof import('./src/components/Panel.vue')['default']
     QRCode: typeof import('./src/components/QRCode.vue')['default']
+    RadioButtonsList: typeof import('./src/components/RadioGroup.vue')['default']
+    RadioGroup: typeof import('./src/components/RadioGroup.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TextFieldInput: typeof import('./src/components/TextFieldInput.vue')['default']
   }
 }
