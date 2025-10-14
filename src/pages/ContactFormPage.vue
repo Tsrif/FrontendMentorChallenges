@@ -22,6 +22,7 @@
         <button class="col-span-2 bg-[#0c7d69] rounded-md text-white h-[3rem]">Submit</button>
       </div>
     </div>
+    <Link href="https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj">Link to challenge</Link>
   </div>
 </template>
 
