@@ -4,9 +4,9 @@
       <div class="grid grid-cols-2 gap-4">
         <h1 class="font-bold text-2xl">Contact Us</h1>
         <div></div>
-        <TextFieldInput :model-value="firstName" label="First Name" :required="true" />
-        <TextFieldInput :model-value="lastName" label="Last name" :required="true" />
-        <TextFieldInput class="col-span-2" :model-value="emailAddress" label="Email Address" :required="true" />
+        <TextFieldInput v-model="firstName" label="First Name" required />
+        <TextFieldInput v-model="lastName" label="Last name" required />
+        <TextFieldInput v-model="emailAddress" class="col-span-2" label="Email Address" required />
         <RadioGroup
           label="Query Type"
           class="col-span-2 text-xs"
@@ -27,12 +27,14 @@
           ></textarea>
         </div>
         <div class="flex gap-2 col-span-2">
-          <input type="checkbox" id="myCheckbox" :v-model="consentBox" class="accent-[#0c7d69]" />
+          <input type="checkbox" id="myCheckbox" v-model="consentBox" class="accent-[#0c7d69]" />
           <label for="myCheckbox" class="text-xs pl-2">I constent to being contacted by the team</label>
           <span class="text-[#033b30] text-xs">*</span>
         </div>
         <button
+          type="submit"
           class="col-span-2 bg-[#0c7d69] rounded-md text-white h-10 text-xs hover:cursor-pointer hover:bg-[#0e584a]"
+          @click="onSubmit"
         >
           Submit
         </button>
@@ -43,10 +45,21 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 const firstName = ref('')
 const lastName = ref('')
 const emailAddress = ref('')
 const message = ref('')
 const consentBox = ref(false)
 const queryType = ref('')
+const onSubmit = () => {
+  console.log({
+    firstName: firstName.value,
+    lastName: lastName.value,
+    emailAddress: emailAddress.value,
+    message: message.value,
+    consentBox: consentBox.value,
+    queryType: queryType.value,
+  })
+}
 </script>
