@@ -1,34 +1,25 @@
 <template>
   <fieldset class="flex flex-col gap-2">
-    <legend v-if="label" class="font-medium">
-      {{ label }} <span v-if="required" class="text-[#a6c6ba] ml-1">*</span>
-    </legend>
+    <div class="flex items-center">
+      <label v-if="label" class="mr-1 text-xs">{{ label }}</label>
+      <span v-if="required" class="text-[#033b30] text-xs">*</span>
+    </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-      <label v-for="(field, idx) in fieldNames" :key="idx" class="block cursor-pointer">
+      <label
+        v-for="(field, idx) in fieldNames"
+        :key="idx"
+        class="flex items-center gap-2 border border-gray-400 rounded-md p-2 cursor-pointer select-none hover:border-[#0c7d69] has-[:checked]:border-[#0c7d69]"
+      >
         <input
           type="radio"
           :name="groupName"
-          class="peer sr-only"
+          class="accent-[#0c7d69] ml-2"
           :value="modelValues[idx]"
           :checked="isChecked(modelValues[idx])"
           @change="onChange(modelValues[idx])"
         />
-
-        <div
-          class="flex items-center gap-3 rounded-lg border px-3 py-2 sm:px-4 sm:py-2.5 border-[#a6c6ba] text-gray-700 transition-colors hover:border-[#0c7d69] peer-checked:border-[#0c7d69] peer-focus-visible:ring-2 peer-focus-visible:ring-[#0c7d69] peer-focus-visible:ring-offset-1"
-        >
-          <span
-            class="h-5 w-5 rounded-full border border-[#a6c6ba] grid place-items-center transition-colors peer-checked:border-[#0c7d69]"
-            aria-hidden="true"
-          >
-            <span
-              class="h-2.5 w-2.5 rounded-full bg-[#0c7d69] transform transition-transform duration-150 scale-0 peer-checked:scale-100"
-            />
-          </span>
-
-          <span class="font-medium">{{ field }}</span>
-        </div>
+        <span class="font-medium">{{ field }}</span>
       </label>
     </div>
   </fieldset>

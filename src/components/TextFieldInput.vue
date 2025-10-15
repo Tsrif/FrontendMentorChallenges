@@ -1,12 +1,13 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex items-center">
-      <label v-if="label" class="mr-1">{{ label }}</label>
-      <span v-if="required" class="text-[#a6c6ba]">*</span>
+    <div class="flex items-center pb-2">
+      <label v-if="label" class="mr-1" :class="labelTextSize">{{ label }}</label>
+      <span v-if="required" class="text-[#033b30]" :class="labelTextSize">*</span>
     </div>
     <input
       :type="type"
-      class="border border-gray-400 rounded-md px-2 py-1"
+      :class="inputStyling"
+      class="border border-gray-400 rounded-md px-2 py-1 focus:outline-none focus:border-[#0c7d69] align-text-top"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :placeholder="placeholder"
@@ -27,6 +28,14 @@ const props = defineProps({
     default: true,
   },
   label: {
+    type: String,
+    default: '',
+  },
+  labelTextSize: {
+    type: String,
+    default: 'text-xs',
+  },
+  inputStyling: {
     type: String,
     default: '',
   },
