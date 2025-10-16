@@ -6,18 +6,17 @@
     </div>
     <input
       :type="type"
-      :class="inputStyling"
+      :class="(inputStyling, errorMessage ? 'border-red-600' : '')"
       class="border border-gray-400 rounded-md px-2 py-1 focus:outline-none focus:border-[#0c7d69] align-text-top"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :placeholder="placeholder"
     />
+    <p v-if="errorMessage" class="text-[9px] text-red-600 ml-1">{{ errorMessage }}</p>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
-
 const props = defineProps({
   modelValue: {
     type: [String, Number],
@@ -46,6 +45,10 @@ const props = defineProps({
   placeholder: {
     type: String,
     default: '',
+  },
+  errorMessage: {
+    type: String,
+    default: null,
   },
 })
 

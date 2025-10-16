@@ -9,6 +9,7 @@
       <label
         v-for="(field, idx) in fieldNames"
         :key="idx"
+        :class="errorMessage ? 'border-red-600' : ''"
         class="flex items-center gap-2 border border-gray-400 rounded-md p-2 cursor-pointer select-none hover:border-[#0c7d69] has-[:checked]:border-[#0c7d69]"
       >
         <input
@@ -22,40 +23,39 @@
         <span class="font-medium">{{ field }}</span>
       </label>
     </div>
+    <p v-if="errorMessage" class="text-[9px] text-red-600 ml-1">{{ errorMessage }}</p>
   </fieldset>
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps, defineEmits, onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 
 const props = defineProps({
   label: { type: String, default: '' },
-
   fieldNames: {
     type: Array,
     required: true,
     validator: a => Array.isArray(a) && a.length > 0,
   },
-
   modelValues: {
     type: Array,
     required: true,
     validator: a => Array.isArray(a) && a.length > 0,
   },
-
   modelValue: {
     type: [String, Number, Boolean, Object],
     default: null,
   },
-
   asMapKey: {
     type: String,
     default: null,
   },
-
   name: { type: String, default: '' },
-
   required: { type: Boolean, default: false },
+  errorMessage: {
+    type: String,
+    default: null,
+  },
 })
 
 const emit = defineEmits(['update:modelValue', 'change'])

@@ -13,7 +13,6 @@ declare module 'vue' {
     Link: typeof import('./src/components/Link.vue')['default']
     Panel: typeof import('./src/components/Panel.vue')['default']
     QRCode: typeof import('./src/components/QRCode.vue')['default']
-    RadioButtonsList: typeof import('./src/components/RadioGroup.vue')['default']
     RadioGroup: typeof import('./src/components/RadioGroup.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
